@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>content</title>
+</head>
+<body>
+    <h1>{{document_id}} 번 게시물  </h1>
+    <table>
+        <tr>
+            <th>작성자</th>
+            <th>제목</th>
+            <th>내용</th>
+            <th>날짜</th>
+            <th>순번(key)</th>            
+        </tr>
+           
+            <tr>
+                <td>{{row[0][0]}}</td>
+                <td>{{row[0][1]}}</td><!--  -->
+                <td>{{row[0][2]}}</td>
+                <td>{{row[0][3]}}</td>
+                <td> {{row[0][4]}}</td>                                
+            </tr>
+    </table>
+    <div>
+        <p style="border:5px; font-size: 30px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; border-color: black;">
+            제목 :  {{row[0][1]}}
+        </p>
+    </div>
+
+
+
+
+
+    <p>
+        <img src= '/{{row[0][5]}}' width="500px">
+        
+        
+
+    </p>
+
+
+
+
+
+    <p>
+        tag: {{row[0][6]}}
+        current state: {{row[0][7]}}
+        <a href= "/state"> <h3>state change  </h3> >
+    </p>
+
+    
+    <p>
+       <a href= "/update"> <h3>update </h3> >
+    </p>
+    <p>
+        <a href= "/delete"> <h3>delete </h3> >
+     </p>
+</body>
+</html>

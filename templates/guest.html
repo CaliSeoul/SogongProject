@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>guest</title>
+    <style>
+        table {
+          width: 100%;
+          border-top: 1px solid #486516 ;
+          border-collapse: collapse;
+        }
+        th, td {
+          border-bottom: 1px solid #486516;
+          border-left: 1px solid #486516;
+          padding: 10px;
+        }
+        th:first-child, td:first-child {
+          border-radius: 50;
+        }
+      </style>
+</head>
+<body>
+    <div>
+
+        
+    </div>
+    <div style="display: inline-flex">
+      <span><p style="font-size: 30px"> GUEST 전용 화면입니다. 조회만 가능하며, 추가적인 기능은 로그인이 필요합니다. </p></span>
+      
+      <button type="button" onclick="location.href= '/'" >로그인 하기  </button>
+      
+
+    </div>
+    
+    
+    <table>
+        <tr>
+            <th>작성자</th>
+            <th>제목</th>
+            <th>내용</th>
+            <th>날짜</th>
+            <th>순번(key)</th>
+            <th>태그</th>
+            <th>상태</th>
+        </tr>
+            {% for row in rows%}
+            <tr>
+                <td>{{row.wrtid}}</td>
+                <td>{{row.title}}</td><!--  -->
+                <td>{{row.content}}</td>
+                <td>{{row.wrtdate}}</td>
+                
+                    <td> {{row.document_id}}</a></td>
+                    
+                
+                <!--추가 -->
+                <td>{{row.tag}}</td>
+                <td>{{row.state}}</td>
+                
+            </tr>
+            {% endfor %}
+    </table>
+    <form method="POST" id="authForm">
+         <!--<a href="/logout" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"  name="logout" ><h3>LogOut</h3></a>-->
+         <input type="hidden" name="cls" value="logout">
+         <!-- 20220516 <input type="text" name = "text" placeholder= "search" value="input"> -->
+         <select name="tag"  >
+            <option value="none" selected ="selected" >none</option>
+            <option value="의류" >의류</option>
+            <option value="가전제품">가전제품</option>
+            <option value="기타">기타</option>                 
+          </select>
+         
+         <input type="submit" name="search" value="search"> SEARCH </button>
+
+         
+
+         
+
+
+    </form>
+    
+    
+    
+</body>
+</html>
