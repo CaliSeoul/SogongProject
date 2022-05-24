@@ -157,12 +157,15 @@ class CommonUser:
         cursor = conn.cursor()
        
         
-        sql = "select * from items as i, followers as f where i.wrtid in (select follow from followers where id = %s and i.wrtid = f.follow )"
-        #sql = "select * from users"
+        sql = "select * from items as i, followers as f where f.id =  %s and i.wrtid = f.follow "
+        #sql2 = "select * from items as i, followers as where i.wrtid = f.follow and f.id = " + " '" + id
+        #sql = "select * from users
         #session['login_user'] = id
-        value = (session['login_user'])
+        #id = (session['login_user'])
+        
+        value = (id)
         cursor.execute("set names utf8")
-        cursor.execute(sql, value)
+        cursor.execute(sql,value)
         #cursor.execute(sql)
         #e[7]추가, 8도  
        
